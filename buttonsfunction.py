@@ -21,7 +21,7 @@ class buttons:
         encoding = webURL.info().get_content_charset('utf-8')
         results = json.loads(data.decode(encoding))
         #print(results)
-        video_link_array = [f"https://www.youtube.com/watch?v={video['id']['videoID']}"
+        video_link_array = [f"https://www.youtube.com/embed/{video['id']['videoId']}?rel=0"
                                 for video in results['items']]
         return random.choice(video_link_array)
             
